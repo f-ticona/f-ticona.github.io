@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zinc-900: #1C1C1E;
+  --color-zinc-800: #2C2C2E;
+  --color-zinc-700: #3A3A3C;
+  --color-zinc-600: #52525B;
+  --color-zinc-500: #71717A;
+  --color-zinc-400: #A1A1AA;
+  --color-zinc-300: #D4D4D8;
+  --color-zinc-100: #F4F4F5;
+
+  --color-violet-800: #5B21B6;
+  --color-violet-600: #7C3AED;
+  --color-violet-400: #A78BFA;
+  --color-violet-300: #C4B5FD;
+
+  --color-orange-500: #F97316;
+  --color-orange-400: #FB923C;
+
+  --font-outfit: 'Outfit', sans-serif;
+}
+
+/* Custom keyframes */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 60px rgba(124,58,237,0.4), 0 0 120px rgba(124,58,237,0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 80px rgba(124,58,237,0.6), 0 0 160px rgba(249,115,22,0.3);
+    transform: scale(1.03);
+  }
+}
+
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes gradient-border-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: #FFFFFF;
+  color: #1C1C1E;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFFFFF;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4D4D8;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A1A1AA;
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(124,58,237,0.2);
+  color: #1C1C1E;
+}
