@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { ScrollReveal } from "../components/shared/ScrollReveal";
 import { TiltCard } from "../components/shared/TiltCard";
 import { Badge } from "../components/ui/Badge";
