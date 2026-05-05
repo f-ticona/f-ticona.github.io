@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { ScrollReveal } from "../components/shared/ScrollReveal";
 import { Badge } from "../components/ui/Badge";
 import { stats, techStack } from "../data/siteData";
+import yoImage from "../assets/yo.jpeg";
 
 function AnimatedCounter({
   value,
@@ -84,7 +85,7 @@ export function AboutSection() {
             <div className="relative">
               <div className="aspect-[4/5] rounded-[24px] overflow-hidden border border-zinc-200 shadow-[0_20px_60px_rgba(0,0,0,0.05)]">
                 <img
-                  src="src/assets/yo.jpeg"
+                  src={yoImage}
                   alt="Freddy Alejandro Ticona Alanoca - Analista de Sistemas"
                   className="w-full h-full object-cover"
                   loading="lazy"
