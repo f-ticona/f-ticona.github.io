@@ -1,5 +1,4 @@
-import { TextSlideLink } from "../ui/TextSlideLink";
-import { socialLinks, navLinks } from "../../data/siteData";
+import { socialLinks, navLinks, contactInfo } from "../../data/siteData";
 
 export function Footer() {
   const quickLinks = navLinks;
@@ -44,13 +43,13 @@ export function Footer() {
             <h4 className="text-zinc-900 font-medium text-lg mb-5">Links</h4>
             <div className="flex flex-col gap-3">
               {quickLinks.map((link) => (
-                <TextSlideLink
+                <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-zinc-600"
+                  className="text-sm text-zinc-600 hover:text-violet-600 transition-colors duration-300"
                 >
                   {link.label}
-                </TextSlideLink>
+                </a>
               ))}
             </div>
           </div>
@@ -70,10 +69,24 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-zinc-900 font-medium text-lg mb-5">Contacto</h4>
-            <div className="flex flex-col gap-3 text-sm text-zinc-600">
-              <span>[EMAIL_ADDRESS]</span>
-              <span>+591 75786379</span>
-              <span>La Paz, Bolivia</span>
+            <div className="flex flex-col gap-3">
+              {contactInfo
+                .filter((item) => item.label !== "Disponibilidad")
+                .map((item) => (
+                  <div key={item.label} className="flex items-center gap-2 text-sm text-zinc-600">
+                    <item.icon size={14} className="text-violet-600 flex-shrink-0" />
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="hover:text-violet-600 transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <span>{item.value}</span>
+                    )}
+                  </div>
+                ))}
             </div>
           </div>
         </div>

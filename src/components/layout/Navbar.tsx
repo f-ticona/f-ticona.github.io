@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
-import { TextSlideLink } from "../ui/TextSlideLink";
 import { navLinks } from "../../data/siteData";
 
 export function Navbar() {
@@ -54,14 +53,14 @@ export function Navbar() {
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) => (
-              <TextSlideLink
+              <a
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm text-zinc-600 font-medium"
+                className="text-sm text-zinc-600 font-medium hover:text-violet-600 transition-colors duration-300"
               >
                 {link.label}
-              </TextSlideLink>
+              </a>
             ))}
           </div>
 
