@@ -28,10 +28,14 @@ function makeParticles(): Particle[] {
     const s2 = seeded[(i + 7) % seeded.length];
     const s3 = seeded[(i + 13) % seeded.length];
     // Deriva aleatoria: combina un desplazamiento vertical dominante con
-    // una deriva horizontal, en ambas direcciones, sin patrón uniforme.
+    // una deriva horizontal, en ambas direcciones. La deriva horizontal se
+    // acota según la posición left de la partícula para que NUNCA salga del
+    // viewport: las que nacen cerca de un borde solo pueden ir hacia dentro.
     const rise = 25 + s2 * 65; // qué tanto sube (25%–90% del alto)
     const horiz = (s3 - 0.5) * 2; // -1..1 hacia izquierda o derecha
-    const driftX = horiz * (8 + s2 * 22); // -30vw..30vw
+    const maxIn = Math.min(s, 1 - s) * 100; // espacio libre a cada lado (%)
+    const cappedDrift = horiz * Math.min(8 + s2 * 22, Math.max(4, maxIn - 2));
+    const driftX = cappedDrift; // vw, nunca desborda el ancho
     const driftY = -rise; // vh (negativo = sube; puede ser suave o leve)
     return {
       left: `${Math.round(s * 100)}%`,

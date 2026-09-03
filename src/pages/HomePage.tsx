@@ -11,7 +11,7 @@ export function HomePage() {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="overflow-x-clip">
         <HeroSection />
         <ServicesSection />
         <ProcessSection />

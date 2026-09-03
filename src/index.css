@@ -93,6 +93,10 @@
 /* Global styles */
 html {
   scroll-behavior: smooth;
+  /* Corta cualquier desborde horizontal en la raíz (no crea scroll).
+     Va en html, no en body: body solo cubre el viewport del documento,
+     pero el scroll horizontal lo controla el elemento raíz. */
+  overflow-x: clip;
 }
 
 body {
@@ -101,14 +105,7 @@ body {
   color: #ececec;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
-}
-
-/* Evita que elementos decorativos (glows, letreros gigantes) provoquen
-   scroll horizontal en móviles */
-html,
-body {
-  max-width: 100%;
+  overflow-x: clip;
 }
 
 /* Scrollbar styling */
