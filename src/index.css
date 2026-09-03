@@ -101,6 +101,14 @@ body {
   color: #ececec;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Evita que elementos decorativos (glows, letreros gigantes) provoquen
+   scroll horizontal en móviles */
+html,
+body {
+  max-width: 100%;
 }
 
 /* Scrollbar styling */

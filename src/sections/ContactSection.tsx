@@ -38,7 +38,7 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="w-full bg-tinta-800 py-[120px] relative">
+    <section id="contacto" className="w-full bg-tinta-800 py-[120px] relative overflow-hidden">
       {/* Decorative glow */}
       <div
         className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"

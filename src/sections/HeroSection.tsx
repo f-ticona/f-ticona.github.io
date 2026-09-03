@@ -57,7 +57,7 @@ export function HeroSection() {
   };
 
   return (
-    <section className="relative w-full min-h-[100dvh] overflow-hidden flex items-center justify-center">
+    <section className="relative w-full min-h-[100dvh] overflow-hidden flex flex-col">
       {/* Gradiente base agua abisal */}
       <div
         className="absolute inset-0 z-0"
@@ -116,8 +116,11 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-[900px] mx-auto text-center px-6">
+      {/* Content — reserva arriba el alto del navbar fijo (80px) para que
+          el badge nunca invada al wordmark en móvil. my-auto centra el
+          bloque solo cuando sobra alto; si no cabe, fluye desde el pt. */}
+      <div className="relative z-10 w-full max-w-[900px] mx-auto flex-1 flex flex-col items-center px-6 py-24">
+        <div className="w-full my-auto flex flex-col items-center text-center">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -191,6 +194,7 @@ export function HeroSection() {
             Contáctame
           </SecondaryButton>
         </motion.div>
+        </div>
       </div>
 
       {/* Scroll indicator */}
