@@ -53,7 +53,7 @@ export function TypingEffect({
       {displayedText}
       {started && (
         <span
-          className="inline-block w-[2px] h-[1em] bg-violet-400 ml-1 align-middle"
+          className="inline-block w-[2px] h-[1em] bg-abisal-400 ml-1 align-middle"
           style={{
             opacity: showCursor ? 1 : 0,
             transition: "opacity 0.2s",

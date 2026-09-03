@@ -13,17 +13,17 @@ export function ProjectsSection() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="proyectos" className="w-full bg-zinc-50 py-[120px]">
+    <section id="proyectos" className="w-full bg-tinta-800 py-[120px]">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12">
         {/* Header */}
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
-              <span className="text-xs font-medium uppercase tracking-[2px] text-violet-600 mb-4 block">
+              <span className="text-xs font-medium uppercase tracking-[2px] text-abisal-400 mb-4 block">
                 PROYECTOS
               </span>
               <h2
-                className="font-outfit font-semibold text-zinc-900 leading-[1.15] tracking-[-1.5px]"
+                className="font-source-code font-semibold text-blanco-roto-50 leading-[1.15] tracking-[-1.5px]"
                 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
               >
                 Trabajos destacados
@@ -38,14 +38,14 @@ export function ProjectsSection() {
                   onClick={() => setActiveFilter(filter)}
                   className={`relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-300 ${
                     activeFilter === filter
-                      ? "text-zinc-100"
-                      : "text-zinc-600 border border-zinc-300 hover:border-violet-400 hover:text-violet-600"
+                      ? "text-tinta-900"
+                      : "text-gris-neutro-300 border border-tinta-700 hover:border-abisal-500 hover:text-abisal-400"
                   }`}
                 >
                   {activeFilter === filter && (
                     <motion.div
                       layoutId="activeFilter"
-                      className="absolute inset-0 bg-violet-600 rounded-lg"
+                      className="absolute inset-0 bg-abisal-500 rounded-lg"
                       transition={{
                         type: "spring",
                         stiffness: 400,
@@ -77,7 +77,7 @@ export function ProjectsSection() {
                 }}
               >
                 <TiltCard className="h-full">
-                  <div className="h-full rounded-[24px] overflow-hidden border border-zinc-200 bg-white backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.05)] group hover:border-violet-600/30 transition-all duration-400">
+                  <div className="h-full rounded-[24px] overflow-hidden border border-tinta-700 bg-tinta-800 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] group hover:border-abisal-500/40 transition-all duration-400">
                     {/* Image */}
                     <div className="relative aspect-[16/10] overflow-hidden">
                       <img
@@ -87,8 +87,8 @@ export function ProjectsSection() {
                         loading="lazy"
                       />
                       {/* Hover overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
-                        <span className="px-4 py-2 bg-violet-600 text-zinc-100 text-sm font-medium rounded-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
+                      <div className="absolute inset-0 bg-gradient-to-t from-tinta-900/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex items-center justify-center">
+                        <span className="px-4 py-2 bg-abisal-500 text-tinta-900 text-sm font-medium rounded-lg translate-y-4 group-hover:translate-y-0 transition-transform duration-400">
                           Ver Proyecto
                         </span>
                       </div>
@@ -96,17 +96,17 @@ export function ProjectsSection() {
 
                     {/* Content */}
                     <div className="p-6">
-                      <h3 className="font-outfit font-medium text-lg text-zinc-900 mb-2">
+                      <h3 className="font-source-code font-medium text-lg text-blanco-roto-50 mb-2">
                         {project.title}
                       </h3>
-                      <p className="text-zinc-600 text-sm leading-[1.6] mb-4 line-clamp-2">
+                      <p className="text-gris-neutro-300 text-sm leading-[1.6] mb-4 line-clamp-2">
                         {project.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2.5 py-1 bg-zinc-100 text-zinc-600 text-xs rounded-md"
+                            className="px-2.5 py-1 bg-tinta-900 text-gris-neutro-300 text-xs rounded-md"
                           >
                             {tag}
                           </span>

@@ -206,8 +206,8 @@ export const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "freddyyque@gmail.com",
-    href: "mailto:freddyyque@gmail.com",
+    value: "fa.alanoca@gmail.com",
+    href: "mailto:fa.alanoca@gmail.com",
   },
   {
     icon: Phone,

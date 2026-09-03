@@ -38,13 +38,13 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="w-full bg-zinc-50 py-[120px] relative">
+    <section id="contacto" className="w-full bg-tinta-800 py-[120px] relative">
       {/* Decorative glow */}
       <div
         className="absolute bottom-0 left-0 w-[400px] h-[400px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at 20% 80%, rgba(249,115,22,0.06) 0%, transparent 40%)",
+            "radial-gradient(circle at 20% 80%, rgba(61,141,181,0.08) 0%, transparent 40%)",
         }}
       />
 
@@ -52,16 +52,16 @@ export function ContactSection() {
         {/* Header */}
         <ScrollReveal>
           <div className="text-center mb-16">
-            <span className="text-xs font-medium uppercase tracking-[2px] text-violet-600 mb-4 block">
+            <span className="text-xs font-medium uppercase tracking-[2px] text-abisal-400 mb-4 block">
               CONTACTO
             </span>
             <h2
-              className="font-outfit font-semibold text-zinc-900 leading-[1.15] tracking-[-1.5px] mb-4"
+              className="font-source-code font-semibold text-blanco-roto-50 leading-[1.15] tracking-[-1.5px] mb-4"
               style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
             >
               Hablemos de tu problema
             </h2>
-            <p className="text-zinc-600 text-lg leading-[1.7] max-w-[550px] mx-auto">
+            <p className="text-gris-neutro-300 text-lg leading-[1.7] max-w-[550px] mx-auto">
               ¿Tienes una idea o necesitas resolver algun problema? Cuéntame sobre
               el asunto y te responderé lo mas pronto posible.
             </p>
@@ -75,29 +75,29 @@ export function ContactSection() {
             <div className="flex flex-col gap-8">
               {contactInfo.map((item) => (
                 <div key={item.label} className="flex items-start gap-4">
-                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-violet-600/10 flex-shrink-0">
+                  <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-abisal-500/10 flex-shrink-0">
                     <item.icon
                       size={20}
                       className={
                         item.label === "Disponibilidad"
-                          ? "text-orange-500"
-                          : "text-violet-600"
+                          ? "text-abisal-400"
+                          : "text-abisal-400"
                       }
                     />
                   </div>
                   <div>
-                    <span className="text-zinc-600 text-xs block mb-1">
+                    <span className="text-gris-neutro-300 text-xs block mb-1">
                       {item.label}
                     </span>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="text-zinc-900 text-base hover:text-violet-600 transition-colors"
+                        className="text-blanco-roto-50 text-base hover:text-abisal-400 transition-colors"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <span className="text-zinc-900 text-base">
+                      <span className="text-blanco-roto-50 text-base">
                         {item.value}
                       </span>
                     )}
@@ -107,7 +107,7 @@ export function ContactSection() {
 
               {/* Social Links */}
               <div className="mt-4">
-                <span className="text-zinc-700 text-sm mb-4 block">
+                <span className="text-gris-neutro-300 text-sm mb-4 block">
                   Sígueme
                 </span>
                 <div className="flex gap-4">
@@ -116,7 +116,7 @@ export function ContactSection() {
                       key={social.label}
                       href={social.href}
                       aria-label={social.label}
-                      className="text-zinc-600 hover:text-violet-600 hover:scale-110 transition-all duration-300"
+                      className="text-gris-neutro-300 hover:text-abisal-400 hover:scale-110 transition-all duration-300"
                     >
                       <social.icon size={24} />
                     </a>
@@ -133,7 +133,7 @@ export function ContactSection() {
                 <div className="flex flex-col gap-6">
                   {/* Name */}
                   <div>
-                    <label className="text-zinc-600 text-xs mb-2 block">
+                    <label className="text-gris-neutro-300 text-xs mb-2 block">
                       Nombre
                     </label>
                     <input
@@ -143,15 +143,15 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="Tu nombre"
                       required
-                      className="w-full bg-white border border-zinc-200 rounded-xl px-5 py-4 text-zinc-900 placeholder-zinc-400
-                      focus:border-violet-600 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)] focus:outline-none
+                      className="w-full bg-tinta-900 border border-tinta-700 rounded-xl px-5 py-4 text-blanco-roto-50 placeholder-gris-neutro-300
+                      focus:border-abisal-500 focus:shadow-[0_0_0_3px_rgba(61,141,181,0.15)] focus:outline-none
                       transition-all duration-300"
                     />
                   </div>
 
                   {/* Email */}
                   <div>
-                    <label className="text-zinc-600 text-xs mb-2 block">
+                    <label className="text-gris-neutro-300 text-xs mb-2 block">
                       Email
                     </label>
                     <input
@@ -161,15 +161,15 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="tu@email.com"
                       required
-                      className="w-full bg-white border border-zinc-200 rounded-xl px-5 py-4 text-zinc-900 placeholder-zinc-400
-                      focus:border-violet-600 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)] focus:outline-none
+                      className="w-full bg-tinta-900 border border-tinta-700 rounded-xl px-5 py-4 text-blanco-roto-50 placeholder-gris-neutro-300
+                      focus:border-abisal-500 focus:shadow-[0_0_0_3px_rgba(61,141,181,0.15)] focus:outline-none
                       transition-all duration-300"
                     />
                   </div>
 
                   {/* Subject */}
                   <div>
-                    <label className="text-zinc-600 text-xs mb-2 block">
+                    <label className="text-gris-neutro-300 text-xs mb-2 block">
                       Asunto
                     </label>
                     <input
@@ -179,15 +179,15 @@ export function ContactSection() {
                       onChange={handleChange}
                       placeholder="¿Sobre qué quieres hablar?"
                       required
-                      className="w-full bg-white border border-zinc-200 rounded-xl px-5 py-4 text-zinc-900 placeholder-zinc-400
-                      focus:border-violet-600 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)] focus:outline-none
+                      className="w-full bg-tinta-900 border border-tinta-700 rounded-xl px-5 py-4 text-blanco-roto-50 placeholder-gris-neutro-300
+                      focus:border-abisal-500 focus:shadow-[0_0_0_3px_rgba(61,141,181,0.15)] focus:outline-none
                       transition-all duration-300"
                     />
                   </div>
 
                   {/* Message */}
                   <div>
-                    <label className="text-zinc-600 text-xs mb-2 block">
+                    <label className="text-gris-neutro-300 text-xs mb-2 block">
                       Mensaje
                     </label>
                     <textarea
@@ -197,8 +197,8 @@ export function ContactSection() {
                       placeholder="Cuéntame sobre tu proyecto..."
                       rows={5}
                       required
-                      className="w-full bg-white border border-zinc-200 rounded-xl px-5 py-4 text-zinc-900 placeholder-zinc-400
-                      focus:border-violet-600 focus:shadow-[0_0_0_3px_rgba(124,58,237,0.1)] focus:outline-none
+                      className="w-full bg-tinta-900 border border-tinta-700 rounded-xl px-5 py-4 text-blanco-roto-50 placeholder-gris-neutro-300
+                      focus:border-abisal-500 focus:shadow-[0_0_0_3px_rgba(61,141,181,0.15)] focus:outline-none
                       transition-all duration-300 resize-y"
                     />
                   </div>
@@ -211,7 +211,7 @@ export function ContactSection() {
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
-                        className="flex items-center justify-center gap-2 bg-green-600/20 text-green-400 border border-green-600/30 rounded-xl py-4"
+                        className="flex items-center justify-center gap-2 bg-verde-terminal-500/20 text-verde-terminal-500 border border-verde-terminal-500/30 rounded-xl py-4"
                       >
                         <Check size={18} />
                         <span className="font-medium">

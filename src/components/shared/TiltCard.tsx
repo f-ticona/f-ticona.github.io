@@ -28,7 +28,7 @@ export function TiltCard({ children, className = "" }: TiltCardProps) {
         <div
           className="pointer-events-none absolute inset-0 rounded-[24px]"
           style={{
-            background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(124,58,237,0.1) 0%, transparent 60%)`,
+            background: `radial-gradient(circle at ${tilt.glareX}% ${tilt.glareY}%, rgba(61,141,181,0.1) 0%, transparent 60%)`,
           }}
         />
       )}

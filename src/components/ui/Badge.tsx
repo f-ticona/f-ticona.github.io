@@ -1,14 +1,12 @@
 interface BadgeProps {
   children: React.ReactNode;
-  variant?: "orange" | "violet";
+  variant?: "abisal";
 }
 
-export function Badge({ children, variant = "violet" }: BadgeProps) {
+export function Badge({ children, variant = "abisal" }: BadgeProps) {
   const variants = {
-    orange:
-      "bg-orange-500/10 text-orange-600 border-orange-500/20",
-    violet:
-      "bg-violet-600/10 text-violet-700 border-violet-600/20",
+    abisal:
+      "bg-abisal-500/10 text-abisal-300 border-abisal-500/30",
   };
 
   return (

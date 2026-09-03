@@ -5,6 +5,48 @@ import { PrimaryButton } from "../components/ui/PrimaryButton";
 import { SecondaryButton } from "../components/ui/SecondaryButton";
 import { TypingEffect } from "../components/shared/TypingEffect";
 
+/* --- Config de partículas --- */
+const PARTICLE_COUNT = 30;
+
+interface Particle {
+  left: string;
+  size: number;
+  delay: number;
+  duration: number;
+  opacity: number;
+  dx: string;
+  dy: string;
+}
+
+function makeParticles(): Particle[] {
+  const seeded = [0.17, 0.53, 0.81, 0.29, 0.92, 0.11, 0.67, 0.41, 0.75, 0.05,
+    0.36, 0.61, 0.22, 0.88, 0.47, 0.13, 0.71, 0.33, 0.97, 0.08,
+    0.56, 0.25, 0.83, 0.44, 0.69, 0.18, 0.51, 0.9, 0.37, 0.77,
+    0.14, 0.63, 0.3, 0.95];
+  return Array.from({ length: PARTICLE_COUNT }, (_, i) => {
+    const s = seeded[i % seeded.length];
+    const s2 = seeded[(i + 7) % seeded.length];
+    const s3 = seeded[(i + 13) % seeded.length];
+    // Deriva aleatoria: combina un desplazamiento vertical dominante con
+    // una deriva horizontal, en ambas direcciones, sin patrón uniforme.
+    const rise = 25 + s2 * 65; // qué tanto sube (25%–90% del alto)
+    const horiz = (s3 - 0.5) * 2; // -1..1 hacia izquierda o derecha
+    const driftX = horiz * (8 + s2 * 22); // -30vw..30vw
+    const driftY = -rise; // vh (negativo = sube; puede ser suave o leve)
+    return {
+      left: `${Math.round(s * 100)}%`,
+      size: 2 + ((i * 7) % 4),
+      delay: (i % 9) * 1.7 + ((i * 13) % 10) * 0.4,
+      duration: 13 + ((i * 11) % 17),
+      opacity: 0.18 + ((i * 5) % 10) * 0.05,
+      dx: `${Math.round(driftX * 10) / 10}vw`,
+      dy: `${Math.round(driftY * 10) / 10}vh`,
+    };
+  });
+}
+
+const PARTICLES = makeParticles();
+
 export function HeroSection() {
   const handleScroll = (id: string) => {
     const el = document.querySelector(id);
@@ -16,36 +58,63 @@ export function HeroSection() {
 
   return (
     <section className="relative w-full min-h-[100dvh] overflow-hidden flex items-center justify-center">
-      {/* Animated gradient background */}
+      {/* Gradiente base agua abisal */}
       <div
-        className="absolute inset-0 z-[-2]"
+        className="absolute inset-0 z-0"
         style={{
           background:
-            "linear-gradient(135deg, #5B21B6 0%, #7C3AED 20%, #F97316 40%, #7C3AED 60%, #5B21B6 80%, #F97316 100%)",
-          backgroundSize: "400% 400%",
-          animation: "gradient-shift 15s ease infinite",
+            "radial-gradient(ellipse at 50% 20%, #1c2733 0%, #141a21 45%, #0d1116 100%)",
         }}
       />
 
-      {/* Light overlay */}
-      <div className="absolute inset-0 z-[-1] bg-white/40" />
+      {/* Letrero ingentl hundido en el fondo del mar: gigante, con blur;
+          en reposo casi invisible y enciende al 40% con el pulso de luz */}
+      <div className="absolute inset-0 z-[1] flex items-center justify-center pointer-events-none overflow-hidden">
+        <span
+          className="font-press-start text-[clamp(3rem,12vw,15rem)] text-blanco-roto-50 tracking-[0.02em] select-none whitespace-nowrap"
+          style={{
+            filter: "blur(6px)",
+            animation: "sign-glow 11s ease-in-out infinite",
+          }}
+        >
+          ingentl
+        </span>
+      </div>
 
-      {/* Central glow circle */}
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{
-          duration: 1,
-          delay: 0.5,
-          ease: [0.34, 1.56, 0.64, 1],
-        }}
-        className="absolute z-0 w-[300px] h-[300px] rounded-full"
-        style={{
-          background:
-            "radial-gradient(circle, rgba(124,58,237,0.3) 0%, transparent 70%)",
-          animation: "pulse-glow 3s ease-in-out infinite",
-        }}
-      />
+      {/* Partículas en suspensión (sedimento / plancton) con deriva aleatoria */}
+      <div className="absolute inset-0 z-[2] overflow-hidden pointer-events-none">
+        {PARTICLES.map((p, i) => (
+          <span
+            key={i}
+            className="absolute rounded-full bg-abisal-300"
+            style={{
+              left: p.left,
+              bottom: "-12px",
+              width: p.size,
+              height: p.size,
+              ["--p-op" as string]: p.opacity,
+              ["--p-dx" as string]: p.dx,
+              ["--p-dy" as string]: p.dy,
+              boxShadow: "0 0 6px rgba(122,184,212,0.4)",
+              animation: `particle-drift ${p.duration}s linear ${p.delay}s infinite`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Luz intermitente desde arriba (pulso ocasional) — por encima de
+          letrero y partículas: los baña y los hace brillar al iluminarse */}
+      <div className="absolute inset-0 z-[3] overflow-hidden pointer-events-none">
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(122,184,212,0.5), transparent 75%)",
+            mixBlendMode: "screen",
+            animation: "master-beam 11s ease-in-out infinite",
+          }}
+        />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-[900px] mx-auto text-center px-6">
@@ -54,18 +123,18 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-6"
+          className="mb-5"
         >
-          <Badge variant="violet">Consultor IT Independiente</Badge>
+          <Badge variant="abisal">Consultor IT Independiente</Badge>
         </motion.div>
 
-        {/* H1 */}
+        {/* H1 — nombre */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="font-outfit font-semibold text-zinc-900 leading-[1.1] tracking-[-2px] mb-4"
-          style={{ fontSize: "clamp(2.5rem, 8vw, 4.5rem)" }}
+          className="font-source-code font-semibold text-blanco-roto-50 leading-[1.1] tracking-[-2px] mb-4"
+          style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
         >
           Freddy Alejandro Ticona Alanoca
         </motion.h1>
@@ -77,7 +146,7 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="mb-6"
         >
-          <span className="font-outfit text-violet-600 text-xl tracking-[1px]">
+          <span className="font-source-code text-abisal-400 text-xl tracking-[1px]">
             <TypingEffect
               text="Analista de Sistemas | Desarrollador de Soluciones"
               speed={40}
@@ -91,7 +160,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-zinc-700 text-lg leading-[1.7] max-w-[600px] mx-auto mb-10"
+          className="text-gris-neutro-300 text-lg leading-[1.7] max-w-[600px] mx-auto mb-10"
         >
           Transformo problemas administrativos complejos en herramientas
           tecnológicas elegantes. Más de 8 años ayudando a empresas y
@@ -129,11 +198,11 @@ export function HeroSection() {
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 0.6, y: 0 }}
         transition={{ duration: 0.6, delay: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
       >
         <ChevronDown
           size={24}
-          className="text-zinc-500"
+          className="text-gris-neutro-300"
           style={{ animation: "bounce-scroll 2s infinite" }}
         />
       </motion.div>

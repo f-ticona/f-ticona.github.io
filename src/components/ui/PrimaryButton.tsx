@@ -22,11 +22,11 @@ export function PrimaryButton({
 }: PrimaryButtonProps) {
   const baseClasses = `
     inline-flex items-center justify-center gap-2
-    bg-violet-600 text-zinc-100
-    font-outfit font-medium text-base
+    bg-abisal-500 text-tinta-900
+    font-source-code font-medium text-base
     px-8 py-3.5 rounded-xl
-    shadow-[0_4px_16px_rgba(124,58,237,0.3)]
-    hover:bg-violet-400 hover:scale-[1.02]
+    shadow-[0_4px_16px_rgba(61,141,181,0.3)]
+    hover:bg-abisal-400 hover:scale-[1.02]
     active:scale-[0.98]
     transition-all duration-300
     disabled:opacity-50 disabled:cursor-not-allowed

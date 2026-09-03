@@ -10,43 +10,31 @@ export function Footer() {
   ];
 
   return (
-    <footer className="w-full bg-white border-t border-zinc-200">
+    <footer className="w-full bg-tinta-900 border-t border-tinta-700">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 pt-20 pb-8">
         {/* Main Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <img
-                src="/favicon.svg"
-                alt="Logo INGENtl"
-                width="28"
-                height="28"
-                className="object-contain"
-              />
-              <div className="flex items-baseline leading-none gap-[2px]">
-                <span className="font-outfit font-light text-[1.25rem] tracking-[0.16em] uppercase text-zinc-900">
-                  Ingen
-                </span>
-                <span className="font-['Cormorant_Garamond'] italic font-semibold text-[1.6rem] -ml-[0.1em] text-transparent bg-clip-text bg-gradient-to-br from-[#3d8ef8] via-[#5ba4ff] to-[#8bc4ff]">
-                  tl
-                </span>
-              </div>
+            <div className="mb-4">
+              <span className="font-press-start text-base text-blanco-roto-50 tracking-[-0.02em]">
+                ingentl
+              </span>
             </div>
-            <p className="text-zinc-600 text-sm leading-relaxed">
+            <p className="text-gris-neutro-300 text-sm leading-relaxed">
               Ingeniería y Tecnología al servicio de tu imaginación.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-zinc-900 font-medium text-lg mb-5">Links</h4>
+            <h4 className="text-blanco-roto-50 font-medium text-lg mb-5">Links</h4>
             <div className="flex flex-col gap-3">
               {quickLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-zinc-600 hover:text-violet-600 transition-colors duration-300"
+                  className="text-sm text-gris-neutro-300 hover:text-abisal-400 transition-colors duration-300"
                 >
                   {link.label}
                 </a>
@@ -56,10 +44,10 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-zinc-900 font-medium text-lg mb-5">Servicios</h4>
+            <h4 className="text-blanco-roto-50 font-medium text-lg mb-5">Servicios</h4>
             <div className="flex flex-col gap-3">
               {services.map((service) => (
-                <span key={service} className="text-sm text-zinc-600">
+                <span key={service} className="text-sm text-gris-neutro-300">
                   {service}
                 </span>
               ))}
@@ -68,17 +56,17 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-zinc-900 font-medium text-lg mb-5">Contacto</h4>
+            <h4 className="text-blanco-roto-50 font-medium text-lg mb-5">Contacto</h4>
             <div className="flex flex-col gap-3">
               {contactInfo
                 .filter((item) => item.label !== "Disponibilidad")
                 .map((item) => (
-                  <div key={item.label} className="flex items-center gap-2 text-sm text-zinc-600">
-                    <item.icon size={14} className="text-violet-600 flex-shrink-0" />
+                  <div key={item.label} className="flex items-center gap-2 text-sm text-gris-neutro-300">
+                    <item.icon size={14} className="text-abisal-400 flex-shrink-0" />
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="hover:text-violet-600 transition-colors"
+                        className="hover:text-abisal-400 transition-colors"
                       >
                         {item.value}
                       </a>
@@ -92,9 +80,9 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-zinc-200 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-zinc-600">
-            © {new Date().getFullYear()} INGENtl. Todos los derechos reservados.
+        <div className="border-t border-tinta-700 mt-16 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gris-neutro-300">
+            © {new Date().getFullYear()} ingentl. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (
@@ -102,7 +90,7 @@ export function Footer() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="text-zinc-500 hover:text-violet-400 transition-colors duration-300 hover:scale-110"
+                className="text-gris-neutro-300 hover:text-abisal-400 transition-colors duration-300 hover:scale-110"
               >
                 <social.icon size={20} />
               </a>

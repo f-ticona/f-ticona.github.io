@@ -18,11 +18,11 @@ export function SecondaryButton({
 }: SecondaryButtonProps) {
   const baseClasses = `
     inline-flex items-center justify-center gap-2
-    bg-transparent text-zinc-600
-    border border-zinc-300
-    font-outfit font-medium text-base
+    bg-transparent text-blanco-roto-50
+    border border-tinta-700
+    font-source-code font-medium text-base
     px-8 py-3.5 rounded-xl
-    hover:border-violet-400 hover:text-violet-600
+    hover:border-abisal-500 hover:text-abisal-400
     transition-all duration-300
     ${className}
   `;

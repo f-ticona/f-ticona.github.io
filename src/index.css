@@ -1,41 +1,76 @@
 @import "tailwindcss";
 
 @theme {
-  --color-zinc-900: #1C1C1E;
-  --color-zinc-800: #2C2C2E;
-  --color-zinc-700: #3A3A3C;
-  --color-zinc-600: #52525B;
-  --color-zinc-500: #71717A;
-  --color-zinc-400: #A1A1AA;
-  --color-zinc-300: #D4D4D8;
-  --color-zinc-100: #F4F4F5;
+  /* Shell tinta (modo oscuro terminal — principal) */
+  --color-tinta-900: #14161a;
+  --color-tinta-800: #1c1f24;
+  --color-tinta-700: #2a2e35;
 
-  --color-violet-800: #5B21B6;
-  --color-violet-600: #7C3AED;
-  --color-violet-400: #A78BFA;
-  --color-violet-300: #C4B5FD;
+  --color-blanco-roto-50: #ececec;
+  --color-gris-neutro-300: #8b9098;
 
-  --color-orange-500: #F97316;
-  --color-orange-400: #FB923C;
+  /* Brasa: turquesa abisal (acento mutable — formal) */
+  --color-abisal-500: #3d8db5;
+  --color-abisal-600: #35799c;
+  --color-abisal-700: #336a85;
+  --color-abisal-400: #5ba4c7;
+  --color-abisal-300: #7ab8d4;
 
-  --font-outfit: 'Outfit', sans-serif;
+  /* Estados funcionales (fijos) */
+  --color-verde-terminal-500: #6fae6a;
+  --color-rojo-alerta-500: #d04a4a;
+  --color-ocre-500: #d4a857;
+
+  --font-source-code: 'Source Code Pro', monospace;
+  --font-press-start: 'Press Start 2P', monospace;
 }
 
 /* Custom keyframes */
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+/* --- Fondo abisal: luz intermitente, partículas y letrero --- */
+/* Hace de "maestro": sube la intensidad en un momento del ciclo */
+@keyframes master-beam {
+  0%, 38%, 62%, 100% { opacity: 0.22; }
+  48%, 54% { opacity: 1; }
 }
 
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 60px rgba(124,58,237,0.4), 0 0 120px rgba(124,58,237,0.2);
-    transform: scale(1);
+/* Partículas de sedimento con deriva aleatoria (no siempre hacia arriba).
+   Cada partícula define --p-dx / --p-dy (desplazamiento en vw/vh) y
+   --p-op (opacidad base). El pulso de luz (master-beam, encima de ellas)
+   las hace brillar al iluminarse. */
+@keyframes particle-drift {
+  0% { transform: translate(0, 0); opacity: 0; }
+  12% { opacity: var(--p-op, 0.35); }
+  80% { opacity: var(--p-op, 0.35); }
+  100% {
+    transform: translate(var(--p-dx, 5vw), var(--p-dy, -40vh));
+    opacity: 0;
   }
-  50% {
-    box-shadow: 0 0 80px rgba(124,58,237,0.6), 0 0 160px rgba(249,115,22,0.3);
-    transform: scale(1.03);
+}
+
+/* Letrero ingentl: apagado en reposo (~1.5%) y enciende al 40%
+   sincronizado con master-beam (11s). El blur va en el elemento. */
+@keyframes sign-glow {
+  0%, 38%, 62%, 100% {
+    opacity: 0.015;
+    text-shadow: 0 0 0 transparent;
+  }
+  48%, 54% {
+    opacity: 0.4;
+    text-shadow:
+      /* relieve extruido tipo placa */
+      0 2px 0 #38576f,
+      0 4px 0 #2c475f,
+      0 6px 0 #22394e,
+      0 8px 0 #1a2c3f,
+      0 10px 0 #132232,
+      0 12px 0 #0d1a28,
+      /* sombra proyectada difusa */
+      0 18px 12px rgba(8, 11, 15, 0.3),
+      0 32px 30px rgba(8, 11, 15, 0.22),
+      /* glow abisal (40%) */
+      0 0 18px rgba(91, 164, 199, 0.32),
+      0 0 50px rgba(61, 141, 181, 0.24),
+      0 0 120px rgba(61, 141, 181, 0.14);
   }
 }
 
@@ -61,9 +96,9 @@ html {
 }
 
 body {
-  font-family: 'Outfit', sans-serif;
-  background-color: #FFFFFF;
-  color: #1C1C1E;
+  font-family: 'Source Code Pro', monospace;
+  background-color: #14161a;
+  color: #ececec;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -74,20 +109,20 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FFFFFF;
+  background: #14161a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4D4D8;
+  background: #2a2e35;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A1A1AA;
+  background: #3d8db5;
 }
 
 /* Selection color */
 ::selection {
-  background-color: rgba(124,58,237,0.2);
-  color: #1C1C1E;
+  background-color: rgba(61,141,181,0.35);
+  color: #ececec;
 }

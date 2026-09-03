@@ -52,10 +52,10 @@ function StatsRow() {
       {stats.map((stat, i) => (
         <ScrollReveal key={stat.label} delay={i * 0.15}>
           <div>
-            <div className="font-outfit font-bold text-4xl lg:text-[2.5rem] text-zinc-900">
+            <div className="font-source-code font-bold text-4xl lg:text-[2.5rem] text-blanco-roto-50">
               <AnimatedCounter value={stat.value} inView={isInView} />
             </div>
-            <div className="text-zinc-500 text-sm mt-1">{stat.label}</div>
+            <div className="text-gris-neutro-300 text-sm mt-1">{stat.label}</div>
           </div>
         </ScrollReveal>
       ))}
@@ -67,14 +67,14 @@ export function AboutSection() {
   return (
     <section
       id="sobre-mi"
-      className="w-full bg-white py-[120px] relative overflow-hidden"
+      className="w-full bg-tinta-900 py-[120px] relative overflow-hidden"
     >
       {/* Decorative glow */}
       <div
         className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none"
         style={{
           background:
-            "radial-gradient(circle at 80% 20%, rgba(124,58,237,0.08) 0%, transparent 40%)",
+            "radial-gradient(circle at 80% 20%, rgba(61,141,181,0.08) 0%, transparent 40%)",
         }}
       />
 
@@ -83,7 +83,7 @@ export function AboutSection() {
           {/* Photo Column */}
           <ScrollReveal direction="left">
             <div className="relative">
-              <div className="aspect-[4/5] rounded-[24px] overflow-hidden border border-zinc-200 shadow-[0_20px_60px_rgba(0,0,0,0.05)]">
+              <div className="aspect-[4/5] rounded-[24px] overflow-hidden border border-tinta-700 shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
                 <img
                   src={yoImage}
                   alt="Freddy Alejandro Ticona Alanoca - Analista de Sistemas"
@@ -97,24 +97,24 @@ export function AboutSection() {
           {/* Content Column */}
           <ScrollReveal direction="right" delay={0.2}>
             <div>
-              <span className="text-xs font-medium uppercase tracking-[2px] text-violet-400 mb-4 block">
+              <span className="text-xs font-medium uppercase tracking-[2px] text-abisal-400 mb-4 block">
                 SOBRE MÍ
               </span>
 
               <h2
-                className="font-outfit font-semibold text-zinc-900 leading-[1.15] tracking-[-1.5px] mb-4"
+                className="font-source-code font-semibold text-blanco-roto-50 leading-[1.15] tracking-[-1.5px] mb-4"
                 style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
               >
                 Freddy Alejandro Ticona Alanoca
               </h2>
 
               <div className="mb-6">
-                <Badge variant="violet">
-                  Analista de Sistemas | Fundador de INGENtl
+                <Badge variant="abisal">
+                  Analista de Sistemas | Fundador de ingentl
                 </Badge>
               </div>
 
-              <div className="space-y-4 text-zinc-600 leading-[1.7]">
+              <div className="space-y-4 text-gris-neutro-300 leading-[1.7]">
                 <p>
                   Soy analista de sistemas con más de 8 años de experiencia
                   transformando problemas complejos en soluciones digitales
@@ -122,7 +122,7 @@ export function AboutSection() {
                   solo funcionen perfectamente, sino que sean un placer de usar.
                 </p>
                 <p>
-                  Como fundador de INGENtl, he tenido el privilegio de
+                  Como fundador de ingentl, he tenido el privilegio de
                   trabajar con empresas de diversos sectores —desde clínicas
                   hasta restaurantes y startups fintech— ayudándoles a optimizar
                   sus procesos y escalar sus operaciones mediante tecnología a
@@ -140,7 +140,7 @@ export function AboutSection() {
 
               {/* Tech Stack */}
               <div className="mt-10">
-                <span className="text-zinc-500 text-sm mb-4 block">
+                <span className="text-gris-neutro-300 text-sm mb-4 block">
                   Stack Tecnológico
                 </span>
                 <div className="flex flex-wrap gap-4">
@@ -151,7 +151,7 @@ export function AboutSection() {
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.05, duration: 0.3 }}
-                      className="text-zinc-500 hover:text-violet-400 transition-colors duration-300 cursor-default"
+                      className="text-gris-neutro-300 hover:text-abisal-400 transition-colors duration-300 cursor-default"
                       title={tech}
                     >
                       {tech}
