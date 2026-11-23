@@ -100,7 +100,10 @@
 /* Global styles */
 html {
   scroll-behavior: smooth;
-  overflow-x: clip;
+  /* El clip horizontal vive en `body` y en `main`, no en `html`: con
+     `overflow-x: clip` en la raíz, Chromium deja de tratar `html` como
+     contenedor de scroll y `window.scrollTo()` no mueve la página —es lo
+     que usan el navbar y los CTA del hero—. */
 }
 
 body {
