@@ -82,7 +82,7 @@ export function Navbar() {
         <div className="max-w-[1200px] mx-auto h-full flex items-center justify-between px-6 lg:px-12">
           {/* Logo */}
           <a href="#main" className="flex items-center py-2">
-            <span className="font-press-start text-sm text-blanco-roto-50 tracking-[-0.02em]">
+            <span className="font-source-code text-lg font-semibold tracking-[0.08em] text-blanco-roto-50">
               {person.firm.name}
             </span>
           </a>

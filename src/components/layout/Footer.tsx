@@ -9,7 +9,7 @@ export function Footer() {
           {/* Brand Column */}
           <div>
             <div className="mb-4">
-              <span className="font-press-start text-base text-blanco-roto-50 tracking-[-0.02em]">
+              <span className="font-source-code text-xl font-semibold tracking-[0.08em] text-blanco-roto-50">
                 {person.firm.name}
               </span>
             </div>

@@ -14,14 +14,30 @@ function ProjectCase({ project, index }: { project: Project; index: number }) {
         <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr]">
           {/* Panel del diagrama: nunca capturas del sistema interno (D-013) */}
           <figure className="flex flex-col justify-center bg-tinta-950 p-4 md:p-6">
-            <img
-              src={project.diagram}
-              alt={project.diagramAlt}
-              className="w-full h-auto rounded-lg border border-tinta-700"
-              loading="lazy"
-            />
+            <a
+              href={project.diagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-abisal-300"
+              aria-label={`Abrir el diagrama de ${project.title} en tamaño completo`}
+            >
+              <img
+                src={project.diagram}
+                alt={project.diagramAlt}
+                className="w-full h-auto rounded-lg border border-tinta-700 transition-opacity hover:opacity-90"
+                loading="lazy"
+              />
+            </a>
             <figcaption className="mt-3 text-xs text-gris-neutro-300">
               {index === 0 ? CONFIDENTIALITY_FULL : CONFIDENTIALITY_SHORT}
+              <a
+                href={project.diagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 block w-fit text-abisal-300 underline underline-offset-4 hover:text-abisal-400"
+              >
+                Ver diagrama en tamaño completo ↗
+              </a>
             </figcaption>
           </figure>
 
