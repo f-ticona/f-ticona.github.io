@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">Sistema centralizado de gestión de solicitudes de información (PGE, 2024–2025)</title>
+  <desc id="dsc">Tres capas —Angular frontend, Java Spring Boot backend en microservicios y PostgreSQL— y dos integraciones externas: Ciudadanía Digital de AGETIC para autenticación y aprobación digital, y firma digital de AGETIC sobre PDF en los módulos de respuesta a entidades externas.</desc>
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3d8db5"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  </style>
+  <rect width="1200" height="700" fill="#14161a"/>
+  <text x="64" y="52" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2.2">PGE · UNIDAD DE TECNOLOGÍAS DE LA INFORMACIÓN · 2024–2025</text>
+  <text x="64" y="88" font-size="28" fill="#ececec" font-weight="500">Sistema centralizado de gestión de solicitudes de información</text>
+  <text x="64" y="114" font-size="13.5" fill="#8b9098">Arquitectura de microservicios · Desarrollador principal · gestión de requisitos y coordinación técnica</text>
+  <line x1="64" y1="132" x2="1136" y2="132" stroke="#2a2e35" stroke-width="1"/>
+  <text x="64" y="166" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">CAPAS DEL SISTEMA</text>
+  <rect x="64" y="180" width="560" height="104" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="208" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">FRONTEND</text>
+  <text x="88" y="242" font-size="21" fill="#ececec" font-weight="500">Angular</text>
+  <text x="88" y="264" font-size="12.5" fill="#8b9098">definición del stack y la arquitectura</text>
+  <rect x="64" y="316" width="560" height="184" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="344" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">BACKEND</text>
+  <text x="88" y="378" font-size="21" fill="#ececec" font-weight="500">Java Spring Boot</text>
+  <text x="88" y="400" font-size="12.5" fill="#8b9098">arquitectura de microservicios</text>
+  <rect x="88" y="424" width="199.60000000000002" height="26" rx="6" fill="#22262c" stroke="#2f343b" stroke-width="1"/><text x="102" y="441.32" font-size="12" fill="#8b9098">solicitudes de información</text>
+  <rect x="299.6" y="424" width="245.8" height="26" rx="6" fill="#22262c" stroke="#2f343b" stroke-width="1"/><text x="313.6" y="441.32" font-size="12" fill="#8b9098">requisitos y coordinación técnica</text>
+  <rect x="64" y="532" width="560" height="86" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="560" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">BASE DE DATOS</text>
+  <text x="88" y="592" font-size="21" fill="#ececec" font-weight="500">PostgreSQL</text>
+  <text x="696" y="282" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">INTEGRACIONES Y ENTIDADES EXTERNAS</text>
+  <rect x="696" y="296" width="440" height="104" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="720" y="324" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">INTEGRACIÓN</text>
+  <text x="720" y="358" font-size="17" fill="#ececec" font-weight="500">Ciudadanía Digital de AGETIC</text>
+  <text x="720" y="380" font-size="11.5" fill="#8b9098">autenticación y aprobación digital</text>
+  <rect x="696" y="416" width="440" height="104" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="720" y="444" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">MÓDULOS DE RESPUESTA</text>
+  <text x="720" y="478" font-size="17" fill="#ececec" font-weight="500">Entidades externas</text>
+  <text x="720" y="500" font-size="11.5" fill="#8b9098">firma digital sobre PDF · AGETIC</text>
+  <rect x="696" y="536" width="440" height="82" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <rect x="696" y="552" width="3" height="50" rx="1.5" fill="#3d8db5" stroke="#3d8db5" stroke-width="1"/>
+  <text x="720" y="562" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">ROL</text>
+  <text x="720" y="586" font-size="12" fill="#ececec">Desarrollador principal del sistema</text>
+  <text x="720" y="604" font-size="12" fill="#8b9098">Definición del stack y la arquitectura</text>
+  <line x1="660" y1="168" x2="660" y2="618" stroke="#252930" stroke-width="1" stroke-dasharray="4 7"/>
+  <line x1="344" y1="284" x2="344" y2="316" stroke="#3d8db5" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="344" y1="500" x2="344" y2="532" stroke="#3d8db5" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="624" y1="348" x2="696" y2="348" stroke="#3d8db5" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="624" y1="468" x2="696" y2="468" stroke="#3d8db5" stroke-width="1.6" marker-end="url(#arw)"/>
+  <line x1="64" y1="640" x2="1136" y2="640" stroke="#2a2e35" stroke-width="1"/>
+  <text x="64" y="668" font-size="11.5" fill="#8b9098">Basado en el CV. Sin capturas por confidencialidad.</text>
+  <text x="1136" y="668" font-size="11.5" fill="#8b9098" text-anchor="end">Freddy A. Ticona A. · Portafolio</text>
+</svg>

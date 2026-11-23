@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">Módulos del sistema institucional — diseño, calidad y adopción (PGE, 2024)</title>
+  <desc id="dsc">Cuatro frentes del trabajo sobre los módulos del sistema institucional: mockups, control de calidad con pruebas, seguimiento de registros y reporte de errores, Manual de Usuario final, y capacitación y soporte a usuarios de los 9 departamentos de Bolivia. Banda inferior: soporte técnico de hardware, software, periféricos y conectividad de red.</desc>
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3d8db5"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  </style>
+  <rect width="1200" height="700" fill="#14161a"/>
+  <text x="64" y="52" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2.2">PGE · UTIC · 2024 · PASANTE</text>
+  <text x="64" y="88" font-size="28" fill="#ececec" font-weight="500">Módulos del sistema institucional — diseño, calidad y adopción</text>
+  <text x="64" y="114" font-size="13.5" fill="#8b9098">Mockups · control de calidad · Manual de Usuario · 9 departamentos de Bolivia</text>
+  <line x1="64" y1="132" x2="1136" y2="132" stroke="#2a2e35" stroke-width="1"/>
+  <rect x="64" y="190" width="520" height="144" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="222" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">DISEÑO Y PROTOTIPADO</text>
+  <text x="88" y="256" font-size="20" fill="#ececec" font-weight="500">Mockups</text>
+  <text x="88" y="284" font-size="12.5" fill="#8b9098">prototipado de los módulos</text>
+  <text x="88" y="302" font-size="12.5" fill="#8b9098">del sistema institucional</text>
+  <rect x="512" y="214" width="28" height="20" rx="3" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="518" y="220" width="18" height="14" rx="3" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="524" y="226" width="10" height="8" rx="3" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="616" y="190" width="520" height="144" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="640" y="222" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">CONTROL DE CALIDAD</text>
+  <text x="640" y="256" font-size="20" fill="#ececec" font-weight="500">Pruebas</text>
+  <text x="640" y="284" font-size="12.5" fill="#8b9098">seguimiento de registros</text>
+  <text x="640" y="302" font-size="12.5" fill="#8b9098">reporte de errores</text>
+  <path d="M1072,231 l8,9 l16,-19" fill="none" stroke="#3d8db5" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="64" y="350" width="520" height="144" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="382" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">DOCUMENTACIÓN</text>
+  <text x="88" y="416" font-size="20" fill="#ececec" font-weight="500">Manual de Usuario</text>
+  <text x="88" y="444" font-size="12.5" fill="#8b9098">redacción del manual final</text>
+  <rect x="518" y="374" width="26" height="32" rx="3" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <line x1="524" y1="383" x2="538" y2="383" stroke="#3d8db5" stroke-width="1.4"/>
+  <line x1="524" y1="391" x2="538" y2="391" stroke="#3d8db5" stroke-width="1.4"/>
+  <line x1="524" y1="399" x2="538" y2="399" stroke="#3d8db5" stroke-width="1.4"/>
+  <rect x="616" y="350" width="520" height="144" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="640" y="382" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">USUARIOS</text>
+  <text x="640" y="416" font-size="20" fill="#ececec" font-weight="500">Capacitación y soporte</text>
+  <text x="640" y="444" font-size="12.5" fill="#8b9098">a usuarios de los 9 departamentos</text>
+  <text x="640" y="462" font-size="12.5" fill="#8b9098">de Bolivia</text>
+  <rect x="1064" y="374" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1074" y="374" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1084" y="374" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1064" y="384" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1074" y="384" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1084" y="384" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1064" y="394" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1074" y="394" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="1084" y="394" width="6" height="6" rx="1.5" fill="none" stroke="#3d8db5" stroke-width="1.2"/>
+  <rect x="64" y="514" width="1072" height="96" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="546" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">SOPORTE TÉCNICO</text>
+  <line x1="360" y1="556" x2="360" y2="592" stroke="#2a2e35" stroke-width="1"/>
+  <line x1="648" y1="556" x2="648" y2="592" stroke="#2a2e35" stroke-width="1"/>
+  <line x1="936" y1="556" x2="936" y2="592" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="582" font-size="13.5" fill="#ececec" font-weight="500">Hardware</text>
+  <text x="376" y="582" font-size="13.5" fill="#ececec" font-weight="500">Software</text>
+  <text x="664" y="582" font-size="13.5" fill="#ececec" font-weight="500">Periféricos</text>
+  <text x="952" y="582" font-size="13.5" fill="#ececec" font-weight="500">Conectividad de red</text>
+  <line x1="64" y1="640" x2="1136" y2="640" stroke="#2a2e35" stroke-width="1"/>
+  <text x="64" y="668" font-size="11.5" fill="#8b9098">Basado en el CV. Sin capturas por confidencialidad.</text>
+  <text x="1136" y="668" font-size="11.5" fill="#8b9098" text-anchor="end">Freddy A. Ticona A. · Portafolio</text>
+</svg>

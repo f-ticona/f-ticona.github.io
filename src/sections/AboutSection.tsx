@@ -1,73 +1,15 @@
-import { motion, useInView } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { CheckCircle2, MapPin } from "lucide-react";
 import { ScrollReveal } from "../components/shared/ScrollReveal";
+import { SectionHeader } from "../components/shared/SectionHeader";
 import { Badge } from "../components/ui/Badge";
-import { stats, techStack } from "../data/siteData";
+import { evidences, person } from "../data/siteData";
 import yoImage from "../assets/yo.jpeg";
-
-function AnimatedCounter({
-  value,
-  inView,
-}: {
-  value: string;
-  inView: boolean;
-}) {
-  const numericValue = parseInt(value.replace(/\D/g, ""));
-  const suffix = value.replace(/[0-9]/g, "");
-  const [display, setDisplay] = useState(0);
-
-  useEffect(() => {
-    if (!inView) return;
-
-    let start = 0;
-    const duration = 2000;
-    const increment = numericValue / (duration / 16);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= numericValue) {
-        setDisplay(numericValue);
-        clearInterval(timer);
-      } else {
-        setDisplay(Math.floor(start));
-      }
-    }, 16);
-
-    return () => clearInterval(timer);
-  }, [inView, numericValue]);
-
-  return (
-    <span>
-      {display}
-      {suffix}
-    </span>
-  );
-}
-
-function StatsRow() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.5 });
-
-  return (
-    <div ref={ref} className="flex flex-wrap gap-8 lg:gap-12 mt-10">
-      {stats.map((stat, i) => (
-        <ScrollReveal key={stat.label} delay={i * 0.15}>
-          <div>
-            <div className="font-source-code font-bold text-4xl lg:text-[2.5rem] text-blanco-roto-50">
-              <AnimatedCounter value={stat.value} inView={isInView} />
-            </div>
-            <div className="text-gris-neutro-300 text-sm mt-1">{stat.label}</div>
-          </div>
-        </ScrollReveal>
-      ))}
-    </div>
-  );
-}
 
 export function AboutSection() {
   return (
     <section
-      id="sobre-mi"
-      className="w-full bg-tinta-900 py-[120px] relative overflow-hidden"
+      id="perfil"
+      className="w-full bg-tinta-900 py-16 md:py-24 lg:py-28 relative overflow-hidden"
     >
       {/* Decorative glow */}
       <div
@@ -79,14 +21,23 @@ export function AboutSection() {
       />
 
       <div className="max-w-[1200px] mx-auto px-6 lg:px-12 relative">
+        <ScrollReveal>
+          <div className="mb-12 lg:mb-16">
+            <SectionHeader
+              eyebrow="Perfil"
+              title="Trayectoria en sistemas institucionales"
+            />
+          </div>
+        </ScrollReveal>
+
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-12 lg:gap-16 items-start">
           {/* Photo Column */}
           <ScrollReveal direction="left">
-            <div className="relative">
+            <div className="relative max-w-[260px] lg:max-w-none">
               <div className="aspect-[4/5] rounded-[24px] overflow-hidden border border-tinta-700 shadow-[0_20px_60px_rgba(0,0,0,0.3)]">
                 <img
                   src={yoImage}
-                  alt="Freddy Alejandro Ticona Alanoca - Analista de Sistemas"
+                  alt={`Retrato de ${person.name}`}
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -97,68 +48,34 @@ export function AboutSection() {
           {/* Content Column */}
           <ScrollReveal direction="right" delay={0.2}>
             <div>
-              <span className="text-xs font-medium uppercase tracking-[2px] text-abisal-400 mb-4 block">
-                SOBRE MÍ
-              </span>
-
-              <h2
-                className="font-source-code font-semibold text-blanco-roto-50 leading-[1.15] tracking-[-1.5px] mb-4"
-                style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
-              >
-                Freddy Alejandro Ticona Alanoca
-              </h2>
-
               <div className="mb-6">
-                <Badge variant="abisal">
-                  Analista de Sistemas | Fundador de ingentl
-                </Badge>
+                <Badge variant="abisal">{person.badge}</Badge>
               </div>
 
               <div className="space-y-4 text-gris-neutro-300 leading-[1.7]">
-                <p>
-                  Soy analista de sistemas con más de 8 años de experiencia
-                  transformando problemas complejos en soluciones digitales
-                  elegantes. Mi pasión es crear herramientas tecnológicas que no
-                  solo funcionen perfectamente, sino que sean un placer de usar.
-                </p>
-                <p>
-                  Como fundador de ingentl, he tenido el privilegio de
-                  trabajar con empresas de diversos sectores —desde clínicas
-                  hasta restaurantes y startups fintech— ayudándoles a optimizar
-                  sus procesos y escalar sus operaciones mediante tecnología a
-                  medida.
-                </p>
-                <p>
-                  Cuando no estoy programando, me encontrarás explorando nuevas
-                  tecnologías, compartiendo conocimiento en la comunidad tech o
-                  disfrutando de un buen café en La Paz.
-                </p>
+                <p>{person.summary}</p>
               </div>
 
-              {/* Stats */}
-              <StatsRow />
+              {/* Evidencias: alcance concreto, sin cifras de vanidad (D-014) */}
+              <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {evidences.map((evidence) => (
+                  <li key={evidence} className="flex items-start gap-3">
+                    <CheckCircle2
+                      size={16}
+                      aria-hidden="true"
+                      className="mt-1 flex-shrink-0 text-abisal-400"
+                    />
+                    <span className="text-[15px] leading-[1.6] text-blanco-roto-50">
+                      {evidence}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
-              {/* Tech Stack */}
-              <div className="mt-10">
-                <span className="text-gris-neutro-300 text-sm mb-4 block">
-                  Stack Tecnológico
-                </span>
-                <div className="flex flex-wrap gap-4">
-                  {techStack.map((tech, i) => (
-                    <motion.span
-                      key={tech}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.05, duration: 0.3 }}
-                      className="text-gris-neutro-300 hover:text-abisal-400 transition-colors duration-300 cursor-default"
-                      title={tech}
-                    >
-                      {tech}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
+              <p className="mt-8 inline-flex items-center gap-2 text-sm text-gris-neutro-300">
+                <MapPin size={14} className="text-abisal-400" aria-hidden="true" />
+                {person.location}
+              </p>
             </div>
           </ScrollReveal>
         </div>

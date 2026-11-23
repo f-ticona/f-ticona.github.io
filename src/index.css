@@ -5,9 +5,13 @@
   --color-tinta-900: #14161a;
   --color-tinta-800: #1c1f24;
   --color-tinta-700: #2a2e35;
+  /* Negro del gradiente del hero y del track del scrollbar, formalizado (UX-001 §5.5) */
+  --color-tinta-950: #0d1116;
 
   --color-blanco-roto-50: #ececec;
   --color-gris-neutro-300: #8b9098;
+  /* Único gris que pasa AA sobre tinta-700 (5,76:1 frente a 4,25 del gris-300) */
+  --color-gris-neutro-200: #a3a9b2;
 
   /* Brasa: turquesa abisal (acento mutable — formal) */
   --color-abisal-500: #3d8db5;
@@ -15,6 +19,9 @@
   --color-abisal-700: #336a85;
   --color-abisal-400: #5ba4c7;
   --color-abisal-300: #7ab8d4;
+
+  /* Anillo de foco: token propio para no repetir el hex en cada componente */
+  --color-foco: #7ab8d4;
 
   /* Estados funcionales (fijos) */
   --color-verde-terminal-500: #6fae6a;
@@ -93,10 +100,10 @@
 /* Global styles */
 html {
   scroll-behavior: smooth;
-  /* Corta cualquier desborde horizontal en la raíz (no crea scroll).
-     Va en html, no en body: body solo cubre el viewport del documento,
-     pero el scroll horizontal lo controla el elemento raíz. */
-  overflow-x: clip;
+  /* El clip horizontal vive en `body` y en `main`, no en `html`: con
+     `overflow-x: clip` en la raíz, Chromium deja de tratar `html` como
+     contenedor de scroll y `window.scrollTo()` no mueve la página —es lo
+     que usan el navbar y los CTA del hero—. */
 }
 
 body {
@@ -131,3 +138,28 @@ body {
   background-color: rgba(61,141,181,0.35);
   color: #ececec;
 }
+
+/* Foco visible global (WCAG 2.1 · 2.4.7).
+   El anillo va con outline-offset para que se vea sobre los botones abisal:
+   sin offset, abisal-300 sobre abisal-500 da 1,7:1; sobre el fondo, 8,31:1. */
+:focus-visible {
+  outline: 2px solid var(--color-foco);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Sin animaciones para quien pide menos movimiento (UX-001 §10.5) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+

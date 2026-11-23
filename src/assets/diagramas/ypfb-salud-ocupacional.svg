@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700" role="img" aria-labelledby="ttl dsc">
+  <title id="ttl">Sistema de salud ocupacional — reconstrucción y refactor (YPFB, 2026)</title>
+  <desc id="dsc">Reconstrucción de un sistema de salud ocupacional en Grails con refactor extenso, módulos completos, migraciones de datos y auditorías; aplicación de DDD y manifiestos de CI/CD; frentes de requisitos, QA y seguridad, y capacitación; mantenimiento de sistemas Spring Boot y Angular.</desc>
+  <defs>
+    <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#3d8db5"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+  </style>
+  <rect width="1200" height="700" fill="#14161a"/>
+  <text x="64" y="52" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2.2">YPFB · GTIC–DISC · 2026 · PASANTE</text>
+  <text x="64" y="88" font-size="28" fill="#ececec" font-weight="500">Sistema de salud ocupacional — reconstrucción y refactor</text>
+  <text x="64" y="114" font-size="13.5" fill="#8b9098">Grails · DDD · manifiestos de CI/CD · mantenimiento de sistemas Spring Boot y Angular</text>
+  <line x1="64" y1="132" x2="1136" y2="132" stroke="#2a2e35" stroke-width="1"/>
+  <text x="64" y="164" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">REQUISITOS, QA Y CAPACITACIÓN</text>
+  <rect x="64" y="176" width="286" height="92" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="206" font-size="15" fill="#ececec" font-weight="500">Requisitos y diseño</text>
+  <text x="88" y="230" font-size="11.5" fill="#8b9098">levantamiento y documentación</text>
+  <text x="88" y="247" font-size="11.5" fill="#8b9098">del sistema</text>
+  <rect x="64" y="276" width="286" height="92" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="302" font-size="15" fill="#ececec" font-weight="500">QA y seguridad</text>
+  <text x="88" y="322" font-size="11.5" fill="#8b9098">issues de QA</text>
+  <text x="88" y="338" font-size="11.5" fill="#8b9098">hallazgos de análisis</text>
+  <text x="88" y="354" font-size="11.5" fill="#8b9098">de seguridad</text>
+  <rect x="64" y="376" width="286" height="92" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="88" y="406" font-size="15" fill="#ececec" font-weight="500">Capacitación</text>
+  <text x="88" y="430" font-size="11.5" fill="#8b9098">a usuarios y captura de</text>
+  <text x="88" y="447" font-size="11.5" fill="#8b9098">retroalimentación</text>
+  <rect x="386" y="176" width="444" height="316" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <rect x="386" y="194" width="3" height="280" rx="1.5" fill="#3d8db5" stroke="#3d8db5" stroke-width="1"/>
+  <text x="412" y="206" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">SISTEMA RECONSTRUIDO</text>
+  <text x="412" y="240" font-size="19" fill="#ececec" font-weight="500">Sistema de salud ocupacional</text>
+  <text x="412" y="262" font-size="12.5" fill="#8b9098">reconstrucción en Grails</text>
+  <rect x="412" y="276" width="188" height="72" rx="8" fill="#191c21" stroke="#2a2e35" stroke-width="1"/>
+  <text x="428" y="310" font-size="12.5" fill="#ececec" font-weight="500">Refactor extenso</text>
+  <line x1="428" y1="324" x2="458" y2="324" stroke="#3d8db5" stroke-width="2"/>
+  <rect x="616" y="276" width="188" height="72" rx="8" fill="#191c21" stroke="#2a2e35" stroke-width="1"/>
+  <text x="632" y="310" font-size="12.5" fill="#ececec" font-weight="500">Módulos completos</text>
+  <line x1="632" y1="324" x2="662" y2="324" stroke="#3d8db5" stroke-width="2"/>
+  <rect x="412" y="364" width="188" height="72" rx="8" fill="#191c21" stroke="#2a2e35" stroke-width="1"/>
+  <text x="428" y="398" font-size="12.5" fill="#ececec" font-weight="500">Migraciones de datos</text>
+  <line x1="428" y1="412" x2="458" y2="412" stroke="#3d8db5" stroke-width="2"/>
+  <rect x="616" y="364" width="188" height="72" rx="8" fill="#191c21" stroke="#2a2e35" stroke-width="1"/>
+  <text x="632" y="398" font-size="12.5" fill="#ececec" font-weight="500">Auditorías</text>
+  <line x1="632" y1="412" x2="662" y2="412" stroke="#3d8db5" stroke-width="2"/>
+  <line x1="412" y1="452" x2="804" y2="452" stroke="#252930" stroke-width="1"/>
+  <rect x="412" y="466" width="6" height="6" rx="1.5" fill="#3d8db5"/>
+  <text x="428" y="474" font-size="12" fill="#8b9098">aplicación de DDD</text>
+  <rect x="866" y="176" width="270" height="92" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="890" y="204" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">CONFIGURACIÓN</text>
+  <text x="890" y="244" font-size="15" fill="#ececec" font-weight="500">Manifiestos de CI/CD</text>
+  <rect x="866" y="276" width="270" height="92" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="890" y="306" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">MANTENIMIENTO</text>
+  <text x="890" y="344" font-size="17" fill="#ececec" font-weight="500">Spring Boot</text>
+  <rect x="866" y="376" width="270" height="92" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <text x="890" y="406" font-size="10.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">MANTENIMIENTO</text>
+  <text x="890" y="444" font-size="17" fill="#ececec" font-weight="500">Angular</text>
+  <line x1="350" y1="222" x2="386" y2="222" stroke="#3a4048" stroke-width="1.2"/>
+  <line x1="350" y1="322" x2="386" y2="322" stroke="#3a4048" stroke-width="1.2"/>
+  <line x1="350" y1="422" x2="386" y2="422" stroke="#3a4048" stroke-width="1.2"/>
+  <line x1="830" y1="222" x2="866" y2="222" stroke="#3a4048" stroke-width="1.2"/>
+  <line x1="830" y1="322" x2="866" y2="322" stroke="#3a4048" stroke-width="1.2"/>
+  <line x1="830" y1="422" x2="866" y2="422" stroke="#3a4048" stroke-width="1.2"/>
+  <rect x="64" y="512" width="1072" height="88" rx="12" fill="#1c1f24" stroke="#2a2e35" stroke-width="1"/>
+  <rect x="88" y="528" width="3" height="56" rx="0" fill="#3d8db5" stroke="#3d8db5" stroke-width="1"/>
+  <text x="108" y="542" font-size="9.5" fill="#5aa2c4" font-weight="500" letter-spacing="2">DEL CV</text>
+  <text x="108" y="566" font-size="14" fill="#ececec">«Reconstrucción de un sistema de salud ocupacional en Grails: refactor extenso,</text>
+  <text x="108" y="588" font-size="14" fill="#8b9098">módulos completos, migraciones de datos y auditorías.»</text>
+  <line x1="64" y1="640" x2="1136" y2="640" stroke="#2a2e35" stroke-width="1"/>
+  <text x="64" y="668" font-size="11.5" fill="#8b9098">Basado en el CV. Sin capturas por confidencialidad.</text>
+  <text x="1136" y="668" font-size="11.5" fill="#8b9098" text-anchor="end">Freddy A. Ticona A. · Portafolio</text>
+</svg>

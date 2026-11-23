@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Mail, ChevronDown } from "lucide-react";
+import { ArrowDown, Mail, MapPin, ChevronDown } from "lucide-react";
 import { Badge } from "../components/ui/Badge";
 import { PrimaryButton } from "../components/ui/PrimaryButton";
 import { SecondaryButton } from "../components/ui/SecondaryButton";
-import { TypingEffect } from "../components/shared/TypingEffect";
+import { person } from "../data/siteData";
 
-/* --- Config de partículas --- */
+/* --- Config de partículas ---
+   Se generan 30 y en móvil solo se muestran 12 (UX-001 §9.2): el resto queda
+   oculto con CSS, sin recalcular nada al redimensionar. */
 const PARTICLE_COUNT = 30;
+const PARTICLES_ON_MOBILE = 12;
 
 interface Particle {
   left: string;
@@ -67,7 +70,7 @@ export function HeroSection() {
         className="absolute inset-0 z-0"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 20%, #1c2733 0%, #141a21 45%, #0d1116 100%)",
+            "radial-gradient(ellipse at 50% 20%, #1c2733 0%, #141a21 45%, var(--color-tinta-950) 100%)",
         }}
       />
 
@@ -80,8 +83,9 @@ export function HeroSection() {
             filter: "blur(6px)",
             animation: "sign-glow 11s ease-in-out infinite",
           }}
+          aria-hidden="true"
         >
-          ingentl
+          {person.firm.name}
         </span>
       </div>
 
@@ -90,7 +94,10 @@ export function HeroSection() {
         {PARTICLES.map((p, i) => (
           <span
             key={i}
-            className="absolute rounded-full bg-abisal-300"
+            aria-hidden="true"
+            className={`absolute rounded-full bg-abisal-300 ${
+              i < PARTICLES_ON_MOBILE ? "" : "hidden sm:block"
+            }`}
             style={{
               left: p.left,
               bottom: "-12px",
@@ -125,79 +132,82 @@ export function HeroSection() {
           bloque solo cuando sobra alto; si no cabe, fluye desde el pt. */}
       <div className="relative z-10 w-full max-w-[900px] mx-auto flex-1 flex flex-col items-center px-6 py-24">
         <div className="w-full my-auto flex flex-col items-center text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-5"
-        >
-          <Badge variant="abisal">Consultor IT Independiente</Badge>
-        </motion.div>
-
-        {/* H1 — nombre */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="font-source-code font-semibold text-blanco-roto-50 leading-[1.1] tracking-[-2px] mb-4"
-          style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
-        >
-          Freddy Alejandro Ticona Alanoca
-        </motion.h1>
-
-        {/* Subtitle with typing effect */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-6"
-        >
-          <span className="font-source-code text-abisal-400 text-xl tracking-[1px]">
-            <TypingEffect
-              text="Analista de Sistemas | Desarrollador de Soluciones"
-              speed={40}
-              delay={800}
-            />
-          </span>
-        </motion.div>
-
-        {/* Description */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.2, ease: [0.22, 1, 0.36, 1] }}
-          className="text-gris-neutro-300 text-lg leading-[1.7] max-w-[600px] mx-auto mb-10"
-        >
-          Transformo problemas administrativos complejos en herramientas
-          tecnológicas elegantes. Más de 8 años ayudando a empresas y
-          emprendedores a optimizar sus procesos con sistemas a medida.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{
-            duration: 0.5,
-            delay: 1.4,
-            ease: [0.34, 1.56, 0.64, 1],
-          }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-        >
-          <PrimaryButton
-            icon={ArrowDown}
-            onClick={() => handleScroll("#servicios")}
+          {/* Badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-5"
           >
-            Ver Mis Servicios
-          </PrimaryButton>
-          <SecondaryButton
-            icon={Mail}
-            onClick={() => handleScroll("#contacto")}
+            <Badge variant="abisal">{person.badge}</Badge>
+          </motion.div>
+
+          {/* H1 — nombre */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            className="font-source-code font-semibold text-blanco-roto-50 leading-[1.1] tracking-[-2px] mb-4"
+            style={{ fontSize: "clamp(2rem, 6vw, 3.5rem)" }}
           >
-            Contáctame
-          </SecondaryButton>
-        </motion.div>
+            {person.name}
+          </motion.h1>
+
+          {/* Subtítulo estático + cursor como acento (D-4 opción b) */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-6 font-source-code text-abisal-400 text-lg md:text-xl tracking-[1px]"
+          >
+            {person.headline}
+            <span
+              aria-hidden="true"
+              className="text-abisal-400"
+              style={{ animation: "cursor-blink 1.1s step-end infinite" }}
+            >
+              _
+            </span>
+          </motion.p>
+
+          {/* Línea meta: estado académico + ciudad */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="mb-10 max-w-[600px] space-y-2 text-sm md:text-[15px] leading-[1.7] text-gris-neutro-300"
+          >
+            <p>{person.academicLine}</p>
+            <p className="inline-flex items-center gap-2">
+              <MapPin size={14} className="text-abisal-400" aria-hidden="true" />
+              {person.location}
+            </p>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 1,
+              ease: [0.34, 1.56, 0.64, 1],
+            }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+          >
+            <PrimaryButton
+              icon={ArrowDown}
+              onClick={() => handleScroll("#experiencia")}
+            >
+              Ver experiencia
+            </PrimaryButton>
+            <SecondaryButton
+              icon={Mail}
+              onClick={() => handleScroll("#contacto")}
+            >
+              Contacto
+            </SecondaryButton>
+          </motion.div>
         </div>
       </div>
 
@@ -205,11 +215,12 @@ export function HeroSection() {
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 0.6, y: 0 }}
-        transition={{ duration: 0.6, delay: 2 }}
+        transition={{ duration: 0.6, delay: 1.6 }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
       >
         <ChevronDown
           size={24}
+          aria-hidden="true"
           className="text-gris-neutro-300"
           style={{ animation: "bounce-scroll 2s infinite" }}
         />
